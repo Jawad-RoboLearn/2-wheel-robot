@@ -13,5 +13,5 @@ This repository will provide:
     - MOTORS  (Timers)
     - MOTOR ENCODERS (ADC)
     - ULTRASONIC SENSORS (ADC)
-- Control Functions
+- Control Software
 
