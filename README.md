@@ -1,4 +1,4 @@
-# Two-Wheels-Robot 
+# Two-Wheels-Robot (STM32F411RET6)
 
 I build a 2-wheel-robot that comprises of 
    1. STM32F411RET6 NUCLEO BOARD as Microcontroller
