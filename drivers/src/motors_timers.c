@@ -100,7 +100,7 @@ void set_M1_speed(uint32_t duty_cycle)
     TIM2->CCR1 = duty_cycle;
     
 }
-void set_M1_speed(uint32_t duty_cycle)
+void set_M2_speed(uint32_t duty_cycle)
 {
     // limit
     if (duty_cycle > 100)
