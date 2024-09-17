@@ -220,11 +220,11 @@ void enc2A_IRQ_handler(void)
 { // ENCA OF MOTOR1 is connected to PA6
     if (GPIOA->IDR & (1U<<6)) // ENCA is HIGH
     {
-        encoder1_count--; //ACLKWISE
+        encoder2_count--; //ACLKWISE
     }
     else
     {
-        encoder1_count++; //CLCKWISE
+        encoder2_count++; //CLCKWISE
     }
 }
 
@@ -233,11 +233,11 @@ void enc2B_IRQ_handler(void)
 { // ENCB OF MOTOR2 is connected to PA7
     if (GPIOA->IDR & (1U<<7)) // ENCB is HIGH
     {
-        encoder1_count++; //CLKWISE
+        encoder2_count++; //CLKWISE
     }
     else
     {
-        encoder1_count--; //ACLCKWISE
+        encoder2_count--; //ACLCKWISE
     }
 }
 
