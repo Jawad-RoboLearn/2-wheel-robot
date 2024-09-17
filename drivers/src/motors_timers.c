@@ -89,7 +89,7 @@ void set_M2_dir(int dir)
 }
 
 // set Motor 1 desired speed
-void set_M1_speed(uint32_t duty_cycle)
+void set_M1_speed_duty(uint32_t duty_cycle)
 {
     // limit
     if (duty_cycle > 100)
@@ -106,7 +106,7 @@ void set_M1_speed(uint32_t duty_cycle)
 }
 
 // set Motor 2 desired speed
-void set_M2_speed(uint32_t duty_cycle)
+void set_M2_speed_duty(uint32_t duty_cycle)
 {
     // limit
     if (duty_cycle > 100)
@@ -120,6 +120,36 @@ void set_M2_speed(uint32_t duty_cycle)
 
     TIM2->CCR2 = duty_cycle;
     
+}
+
+float get_M1_speed_counts (uint32_t duty_cycle)
+{
+    // limit
+    if (duty_cycle > 100)
+    {
+        duty_cycle = 100;
+    }
+    if (duty_cycle < 0)
+    {
+        duty_cycle = 0;
+    }
+
+    return (duty_cycle / 100.0f) * MAX_SPEED1_COUNT; // Speed in counts per second
+}
+
+float get_M2_speed_counts (uint32_t duty_cycle)
+{
+    // limit
+    if (duty_cycle > 100)
+    {
+        duty_cycle = 100;
+    }
+    if (duty_cycle < 0)
+    {
+        duty_cycle = 0;
+    }
+
+    return (duty_cycle / 100.0f) * MAX_SPEED2_COUNT; // Speed in counts per second
 }
 
 // Encoder GPIO init
